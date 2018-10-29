@@ -5,9 +5,9 @@ document.querySelector("#activate-mindreading").addEventListener("click", mindRe
 
 document.querySelector("#activate-xray").addEventListener("click", xrayFunction)
 
-document.querySelectorAll("#activate-all").addEventListener("click", activateAllFunction)
+document.querySelector("#activate-all").addEventListener("click", activateAllFunction)
 
-document.querySelectorAll("#deactivate-all").addEventListener("click", deactivateAllFunction)
+document.querySelector("#deactivate-all").addEventListener("click", deactivateAllFunction)
 
 function flightHandlerFunction () {
   let flight = document.getElementById("flight");
@@ -31,8 +31,17 @@ function xrayFunction () {
 xrayFunction()
 
 function activateAllFunction () {
-  let activateAll = document.getElementById("activate-all");
-  activateAll.classList.toggle("enabled")
+  let activateAll = document.getElementsByClassName("power")
+  for(let i=0; i < activateAll.length; i++) {
+  activateAll[i].classList.toggle("enabled") }
   console.log(activateAll)
 }
 activateAllFunction()
+
+function deactivateAllFunction () {
+  let deactivateAll = document.getElementsByClassName("power")
+  for(let i=0; i < deactivateAll.length; i++) {
+  deactivateAll[i].classList.toggle("enabled") }
+  console.log(deactivateAll)
+}
+deactivateAllFunction()
