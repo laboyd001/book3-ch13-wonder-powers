@@ -1,14 +1,38 @@
 
-document.querySelector("#activate-flight").addEventListener("click", function() {
- toggleClass("power-enabled")
-})
+document.querySelector("#activate-flight").addEventListener("click", flightHandlerFunction)
 
-let flight = document.querySelector("#flight")
+document.querySelector("#activate-mindreading").addEventListener("click", mindReadingFunction)
+
+document.querySelector("#activate-xray").addEventListener("click", xrayFunction)
+
+document.querySelectorAll("#activate-all").addEventListener("click", activateAllFunction)
+
+document.querySelectorAll("#deactivate-all").addEventListener("click", deactivateAllFunction)
 
 function flightHandlerFunction () {
-  flight.toggleClass("power-enabled")
+  let flight = document.getElementById("flight");
+  flight.classList.toggle("enabled")
+  console.log(flight)
 }
-
 flightHandlerFunction()
 
-console.log(flight)
+function mindReadingFunction () {
+  let mindReading = document.getElementById("mindreading");
+  mindReading.classList.toggle("enabled")
+  console.log(mindReading)
+}
+mindReadingFunction()
+
+function xrayFunction () {
+  let xray = document.getElementById("xray");
+  xray.classList.toggle("enabled")
+  console.log(xray)
+}
+xrayFunction()
+
+function activateAllFunction () {
+  let activateAll = document.getElementById("activate-all");
+  activateAll.classList.toggle("enabled")
+  console.log(activateAll)
+}
+activateAllFunction()
